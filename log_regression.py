@@ -123,12 +123,14 @@ def logistic_regression(X,y,alpha,n_iter,lambd):
     >>> lambd=0
     >>> n_iter=10000
     >>> alpha=0.1
-    >>> d=pd.read_table("ex2data1.txt",sep=",",header=None)
+    >>> d=pd.read_table("./data/ex2data1.txt",sep=",",header=None)
     >>> X=d[d.columns[0:2]].as_matrix();
     >>> y=np.matrix(d[d.columns[2]]).T
     >>> h,theta=logistic_regression(X,y,alpha,n_iter,lambd)
     >>> print theta
-    >>> print 'Training Accuracy: '+str(float(sum((h>=threshold)==y)))
+    >>> print 'Training Accuracy: '+str(float(sum((h>=threshold)==y)))+'%'
+    Training Accuracy: 89.0%
+
 
     """
     #number of rows of X
@@ -169,22 +171,6 @@ def predict(X,theta):
     pred=hyp_log_r(X,theta)
     
     return pred
-    
-def accuracy(h,y,threshold):
-    print 'Training Accuracy: '+str(float(sum((h>=threshold)==y)))+'%'
-    
-
-
-
-
-
-#X=np.array([[3,5,6], [1 ,2,3], [9,4,2]])
-#y=np.array([[1], [6], [4]])
-#alpha=0.01
-#n_iter=1000
-#h,theta=logistic_regression(X,y,alpha,n_iter)
-#print 'last known H:'+str(h)
-#print 'last known theta:'+str(theta)
 
 
         
