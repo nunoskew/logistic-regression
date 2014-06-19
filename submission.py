@@ -29,6 +29,7 @@ def submit(filename):
     train_,test_=turn_into_matrices(train,test)
     #get theta
     _,theta=logistic_regression(train_,y_matrix,alpha,n_iter,lambd)
+    print theta
     #get predictions in the test set
     pred=predict(test_,theta)
     #merge PassengerId and predictions to create the submission DataFrame

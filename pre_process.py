@@ -57,11 +57,13 @@ def pre_process_(train,test):
     #builds title column
     train,test=build_title(train,test)
     train,test=build_family(train,test)
-    #removes columns cabin, passenger_id and name
+    #removes columns cabin, passenger_id, age and name
     train=train.drop(['Cabin'],1)
     test=test.drop(['Cabin'],1)
     train=train.drop(['PassengerId'],1)
     test=test.drop(['PassengerId'],1)
+    train=train.drop(['Age'],1)
+    test=test.drop(['Age'],1)
     train=train.drop(['Name'],1)
     test=test.drop(['Name'],1)
     #turn pclass column into a column of strings
